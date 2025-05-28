@@ -7,6 +7,10 @@ import io
 import spacy
 import os
 
+# Se sei in locale, userà 8501. Se sei su Render, userà il valore di $PORT
+port = int(os.getenv("PORT", 8501))
+st.set_option('server.port', port)
+
 # Config ambientale
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
